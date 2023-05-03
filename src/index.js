@@ -8,7 +8,7 @@ async function csvToDb(filePath, connectionString) {
   const pool = new Pool({ connectionString });
   const client = await pool.connect();
   try {
-    const stream = fs.createReadStream(filePath).pipe(csv({ delimiter: ',' }));
+    const stream = fs.createReadStream(filePath).pipe(csv());
 
     for await (const row of stream) {
       const { name, email, phone } = row;
