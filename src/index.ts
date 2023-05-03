@@ -1,9 +1,11 @@
-require('dotenv').config();
-const fs = require('fs');
-const csv = require('csv-parser');
+import dotenv from 'dotenv';
+import fs from 'fs';
+import csv from 'csv-parser';
+import pg from 'pg';
 
-const { Pool } = require('pg');
+dotenv.config();
 
+const { Pool } = pg;
 async function csvToDb(filePath, connectionString) {
   const pool = new Pool({ connectionString });
   const client = await pool.connect();
