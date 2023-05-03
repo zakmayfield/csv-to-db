@@ -1,6 +1,5 @@
-require('dotenv').config();
-const fs = require('fs');
-const csv = require('csv-parser');
+import fs from 'fs';
+import csv from 'csv-parser';
 
 const stream = fs.createReadStream('./src/data/testCSV.csv').pipe(csv());
 
