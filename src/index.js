@@ -29,4 +29,4 @@ if (!process.env.CONNECTION_URL) {
   throw new Error('Please add PG connection url');
 }
 
-csvToDb('./testCSV.csv', process.env.CONNECTION_URL);
+csvToDb('./src/data/testCSV.csv', process.env.CONNECTION_URL);
